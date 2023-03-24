@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:alpine
+    ports:
+      - 5433:5432
+    volumes:
+      - jimvolume:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=postgresql
+      - POSTGRES-USER=postgres
+      - POSTGRES_DB=jim
+
+volumes:
+  jimvolume:

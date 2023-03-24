@@ -1,4 +1,4 @@
-package com.Samson.JimApp.training.Service;
+package com.Samson.JimApp.training.service;
 
 import com.Samson.JimApp.exception.ApiNotFoundException;
 import com.Samson.JimApp.training.entity.Training;
@@ -25,9 +25,7 @@ public class TrainingService {
         return repository.findAll();
     }
 
-    public List<Training> getTrainingsByUserId(Long id){
-        return repository.findByUserId(id);
-    }
+
 
 
 }

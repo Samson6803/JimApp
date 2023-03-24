@@ -1,6 +1,6 @@
 package com.Samson.JimApp.training.controller;
 
-import com.Samson.JimApp.training.Service.TrainingService;
+import com.Samson.JimApp.training.service.TrainingService;
 import com.Samson.JimApp.training.entity.Training;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

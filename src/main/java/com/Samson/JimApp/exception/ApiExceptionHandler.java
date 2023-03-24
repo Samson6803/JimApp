@@ -20,4 +20,15 @@ public class ApiExceptionHandler {
         );
         return new ResponseEntity<Object>(apiException, badRequest);
     }
+
+    @ExceptionHandler(value = ApiBadRequestException.class)
+    ResponseEntity<Object> handleApiBadRequestException(ApiBadRequestException e){
+        HttpStatus conflict = HttpStatus.CONFLICT;
+        ApiException apiException = new ApiException(
+                e.getMessage(),
+                conflict,
+                ZonedDateTime.now()
+        );
+        return new ResponseEntity<Object>(apiException, conflict);
+    }
 }

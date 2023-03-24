@@ -1,6 +1,6 @@
 package com.Samson.JimApp.training.entity;
 
-import com.Samson.JimApp.User.entity.User;
+import com.Samson.JimApp.Day;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,8 +16,9 @@ public class Training {
     private long trainingId;
     private String name;
     private String description;
-    private String date;
-    @OneToOne()
-    @JoinColumn(name = "user_id", referencedColumnName = "userId")
-    private User user;
+    @Enumerated
+    private TrainingType sportType;
+    @ManyToOne()
+    @JoinColumn(name = "day_id", referencedColumnName = "dayId")
+    private Day day;
 }

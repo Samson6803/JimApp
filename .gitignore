@@ -3,3 +3,4 @@
 target
 mvnw
 mvnw.cmd
+./main/java/resources/application.yaml
