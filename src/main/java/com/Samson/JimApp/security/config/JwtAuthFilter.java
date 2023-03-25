@@ -1,5 +1,6 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.config;
 
+import com.Samson.JimApp.security.service.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

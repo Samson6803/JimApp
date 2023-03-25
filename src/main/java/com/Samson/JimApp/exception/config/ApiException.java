@@ -1,4 +1,4 @@
-package com.Samson.JimApp.exception;
+package com.Samson.JimApp.exception.config;
 
 import org.springframework.http.HttpStatus;
 import java.time.ZonedDateTime;

@@ -1,5 +1,7 @@
-package com.Samson.JimApp.exception;
+package com.Samson.JimApp.exception.config;
 
+import com.Samson.JimApp.exception.exceptions.ApiBadRequestException;
+import com.Samson.JimApp.exception.exceptions.ApiNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;

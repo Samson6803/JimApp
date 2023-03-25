@@ -1,5 +1,7 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.config;
 
+import com.Samson.JimApp.security.config.JwtAuthEntry;
+import com.Samson.JimApp.security.config.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

@@ -1,4 +1,4 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.service;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

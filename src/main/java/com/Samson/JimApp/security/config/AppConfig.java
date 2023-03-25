@@ -1,4 +1,4 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.config;
 
 import com.Samson.JimApp.user.repository.UserRepository;
 import org.springframework.context.annotation.Bean;

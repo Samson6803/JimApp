@@ -1,4 +1,4 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.config;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

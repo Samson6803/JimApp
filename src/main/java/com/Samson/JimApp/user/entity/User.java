@@ -1,5 +1,6 @@
 package com.Samson.JimApp.user.entity;
 
+import com.Samson.JimApp.day.Day;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,6 +29,8 @@ public class User implements UserDetails {
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToMany(mappedBy = "user")
+    private List<Day> days;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

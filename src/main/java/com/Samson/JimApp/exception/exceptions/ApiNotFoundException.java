@@ -1,4 +1,4 @@
-package com.Samson.JimApp.exception;
+package com.Samson.JimApp.exception.exceptions;
 
 public class ApiNotFoundException extends RuntimeException{
     public ApiNotFoundException(String message){

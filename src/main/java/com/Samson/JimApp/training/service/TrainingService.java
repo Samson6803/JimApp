@@ -1,7 +1,11 @@
 package com.Samson.JimApp.training.service;
 
-import com.Samson.JimApp.exception.ApiNotFoundException;
+import com.Samson.JimApp.day.Day;
+import com.Samson.JimApp.day.DayRepository;
+import com.Samson.JimApp.day.DayService;
+import com.Samson.JimApp.exception.exceptions.ApiNotFoundException;
 import com.Samson.JimApp.training.entity.Training;
+import com.Samson.JimApp.training.entity.TrainingRequest;
 import com.Samson.JimApp.training.repository.TrainingRepository;
 import org.springframework.stereotype.Service;
 
@@ -10,19 +14,28 @@ import java.util.Optional;
 
 @Service
 public class TrainingService {
-    private final TrainingRepository repository;
+    private final TrainingRepository trainingRepository;
+    private final DayService dayService;
 
-    public TrainingService(TrainingRepository repository){
-        this.repository = repository;
+    public TrainingService(TrainingRepository trainingRepository, DayService dayService){
+        this.trainingRepository = trainingRepository;
+        this.dayService = dayService;
     }
 
-    public Training getTraining(Long id){
-        Optional<Training> training = repository.findById(id);
-        return training.orElseThrow(() -> new ApiNotFoundException("Training with id:" + id + "cannot be found"));
+    public Training getTraining(Long trainingId){
+        return trainingRepository.findById(trainingId)
+                .orElseThrow(() -> new ApiNotFoundException("No training with id:" + trainingId + " found"));
     }
 
-    public List<Training> getTrainings(){
-        return repository.findAll();
+    public Training addTraining(TrainingRequest request, Long userId){
+        Day day = dayService.getOrCreateDay(userId, request.date());
+        return trainingRepository.save(Training
+                .builder()
+                .name(request.name())
+                .description(request.description())
+                .day(day)
+                .trainingType(request.type())
+                .build());
     }
 
 

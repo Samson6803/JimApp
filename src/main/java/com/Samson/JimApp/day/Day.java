@@ -1,22 +1,29 @@
-package com.Samson.JimApp;
+package com.Samson.JimApp.day;
 
 import com.Samson.JimApp.training.entity.Training;
 import com.Samson.JimApp.user.entity.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.*;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Day {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long dayId;
     private LocalDate date;
-    @OneToMany(mappedBy = "day")
-    private List<Training> training;
-    @OneToOne
-    @JoinColumn( name = "user_id", referencedColumnName = "")
+    @ManyToOne
+    @JsonIgnore
+    @JoinColumn( name = "user_id", referencedColumnName = "userId")
     private User user;
+    @OneToMany(mappedBy = "day")
+    private List<Training> trainings;
 }

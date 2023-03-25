@@ -1,5 +1,9 @@
-package com.Samson.JimApp.config;
+package com.Samson.JimApp.security.controller;
 
+import com.Samson.JimApp.security.dto.AuthenticationResponse;
+import com.Samson.JimApp.security.service.AuthenticationService;
+import com.Samson.JimApp.security.dto.LoginRequest;
+import com.Samson.JimApp.security.dto.RegisterRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
