@@ -1,6 +1,6 @@
 package com.Samson.JimApp.training.entity;
 
-import com.Samson.JimApp.day.Day;
+import com.Samson.JimApp.day.entity.Day;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

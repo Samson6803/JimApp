@@ -1,5 +1,7 @@
-package com.Samson.JimApp.day;
+package com.Samson.JimApp.day.service;
 
+import com.Samson.JimApp.day.entity.Day;
+import com.Samson.JimApp.day.repository.DayRepository;
 import com.Samson.JimApp.exception.exceptions.ApiNotFoundException;
 import com.Samson.JimApp.user.entity.User;
 import com.Samson.JimApp.user.service.UserService;
@@ -20,8 +22,15 @@ public class DayService {
 
     public Day getDay(Long userId, LocalDate date){
         User user = userService.getUser(userId);
-        return repository.findByDateAndUser(date, user).orElseThrow(() -> new ApiNotFoundException("Day with date " + date
-        + "does not contain anything"));
+        return repository.findByDateAndUser(date, user)
+                .orElseThrow(() -> new ApiNotFoundException("No such day found: " + date));
+    }
+
+    public Day getDay(Long userId){
+        User user = userService.getUser(userId);
+        LocalDate date = LocalDate.now();
+        return repository.findByDateAndUser(date, user)
+                .orElseThrow(() -> new ApiNotFoundException("No such day found: " + date));
     }
 
     public List<Day> getDays(Long userId, LocalDate sinceDate, LocalDate untilDate){

@@ -1,6 +1,6 @@
 package com.Samson.JimApp.user.entity;
 
-import com.Samson.JimApp.day.Day;
+import com.Samson.JimApp.day.entity.Day;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

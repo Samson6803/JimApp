@@ -1,7 +1,5 @@
 package com.Samson.JimApp.security.config;
 
-import com.Samson.JimApp.security.config.JwtAuthEntry;
-import com.Samson.JimApp.security.config.JwtAuthFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -15,11 +13,9 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
-    private final JwtAuthEntry jwtAuthEntry;
 
-    public SecurityConfig(JwtAuthFilter jwtAuthFilter, JwtAuthEntry jwtAuthEntry){
+    public SecurityConfig(JwtAuthFilter jwtAuthFilter){
         this.jwtAuthFilter = jwtAuthFilter;
-        this.jwtAuthEntry = jwtAuthEntry;
     }
 
     //TODO configure csrf

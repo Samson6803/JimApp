@@ -1,16 +1,12 @@
 package com.Samson.JimApp.training.service;
 
-import com.Samson.JimApp.day.Day;
-import com.Samson.JimApp.day.DayRepository;
-import com.Samson.JimApp.day.DayService;
+import com.Samson.JimApp.day.entity.Day;
+import com.Samson.JimApp.day.service.DayService;
 import com.Samson.JimApp.exception.exceptions.ApiNotFoundException;
 import com.Samson.JimApp.training.entity.Training;
 import com.Samson.JimApp.training.entity.TrainingRequest;
 import com.Samson.JimApp.training.repository.TrainingRepository;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TrainingService {

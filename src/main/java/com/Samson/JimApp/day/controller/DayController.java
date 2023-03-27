@@ -1,5 +1,7 @@
-package com.Samson.JimApp.day;
+package com.Samson.JimApp.day.controller;
 
+import com.Samson.JimApp.day.service.DayService;
+import com.Samson.JimApp.day.entity.Day;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -14,7 +16,10 @@ public class DayController {
         this.service = service;
     }
 
-
+    @GetMapping("/{usersId}/days/today")
+    public Day getDay(@PathVariable Long usersId){
+        return service.getDay(usersId);
+    }
     @GetMapping("/{userId}/days/{date}")
     public Day getDay(@PathVariable Long userId, @PathVariable LocalDate date){
         return service.getDay(userId, date);

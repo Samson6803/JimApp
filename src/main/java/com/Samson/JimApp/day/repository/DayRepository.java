@@ -1,5 +1,6 @@
-package com.Samson.JimApp.day;
+package com.Samson.JimApp.day.repository;
 
+import com.Samson.JimApp.day.entity.Day;
 import com.Samson.JimApp.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 

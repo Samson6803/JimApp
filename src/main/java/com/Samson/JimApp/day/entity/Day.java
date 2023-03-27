@@ -1,5 +1,6 @@
-package com.Samson.JimApp.day;
+package com.Samson.JimApp.day.entity;
 
+import com.Samson.JimApp.meal.entity.Meal;
 import com.Samson.JimApp.training.entity.Training;
 import com.Samson.JimApp.user.entity.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,4 +27,6 @@ public class Day {
     private User user;
     @OneToMany(mappedBy = "day")
     private List<Training> trainings;
+    @OneToMany(mappedBy = "day")
+    private List<Meal> meals;
 }

@@ -1,12 +1,9 @@
 package com.Samson.JimApp.training.controller;
 
 import com.Samson.JimApp.training.entity.TrainingRequest;
-import com.Samson.JimApp.training.entity.TrainingType;
 import com.Samson.JimApp.training.service.TrainingService;
 import com.Samson.JimApp.training.entity.Training;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/")
